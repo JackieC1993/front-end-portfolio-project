@@ -1,2 +1,37 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
 
-  
+#content-box {
+    width: 500px;
+    height: 500px;
+    border: 10px solid lightgray;
+    border-radius: 10px;
+
+    background-color: green;
+    display: flex;
+    margin: 0 auto;
+    margin-top: 60px;
+
+}
+
+#pokemon-info {
+    width: 250px;
+    height: 500px;
+    background-color: cyan;
+}
+
+#pokemon-list{
+    width: 250px;
+    height: 500px;
+    background-color:yellow;
+    font-size: 18px;
+    overflow-y: auto;
+}
+.pokemon-name{
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: white;
+    margin: 5px;
+    
+}
