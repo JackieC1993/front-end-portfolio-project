@@ -1,7 +1,7 @@
-// const form = document.querySelector("form")
-// const ul = document.querySelector("ul")
-// ul.classList.add("pokedex", "list")
-const pokemonCount = 151;
+ const form = document.querySelector("form")
+ const ul = document.querySelector("ul")
+ ul.classList.add("pokedex", "list")
+const pokemonCount = 10;
 let pokeddex = {}; // {"name" : "bulbsaur", "img" : url, "type" :["grass", "poison"], "desc" : "...."} )
 
 window.onload = async function () {
@@ -13,14 +13,16 @@ window.onload = async function () {
     pokemon.id = i;
     pokemon.innerText = i.toString() + ". " + pokedex[i]["name"].toUpperCase();
     pokemon.classList.add("pokemon-name");
+    pokemon.addEventListener("click", updatePokemon);
     document.getElementById("pokemon-list").append(pokemon);
  }
-    console.log(pokedex);
+ document.getElementById("pokemon-description").innerText= pokedex[1]["desc"];   
+ console.log(pokedex);
     
 }
 
 async function getPokemon (num) {
-    let url= "https://pokeapi.co/api/v2/pokemon" + num.toString()
+    let url= "https://pokeapi.co/api/v2/pokemon/" + num.toString()
 
     let res =  await fetch(url);
     let pokemon = await res.json();
@@ -30,7 +32,7 @@ async function getPokemon (num) {
     let pokemonType = pokemon["types"]
     let pokemonImg = pokemon["sprites"]["front_default"];
 
-    res = await fetch(pokemon["species"]["front_default"]);
+    res = await fetch(pokemon["species"]["url"]);
     let pokemonDesc = await res.json();
 
     //console.log(pokemonDesc);
@@ -39,4 +41,26 @@ async function getPokemon (num) {
     pokedex[num] = {"name" : pokemonName, "img" : pokemonImg, "types" : pokemonType, "desc" : pokemonDesc}
 
 
+}
+
+function updatePokemon(){
+    document.getElementById("pokemon-img").src = pokedex[this.id]["img"];
+ //clear previous type
+ let typesDiv = document.getElementById("pokemn-types");
+ while (!typesDiv.firstChild)
+ typesDiv.firstChild.remove();
+}
+
+//update types
+let types = pokedex[this.id]["types"];
+for (let i = 0; i < types.length; i++) {
+    let type = document.createElement("span")
+    type.innerHTML = types[i]["type"]["name"].toUpperCase();
+    type.classList.add("type-box");
+    type.classList.add(types[i]["type"]["name"]);//adds background color and font color
+    typesDiv.append(type)
+    }
+
+    //update description
+    document.getElementById("pokemon-description").innerText = pokedex[this.id]["desc"];
 }

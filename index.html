@@ -4,27 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel ="stylesheet" href="styles.css">
-    <script src = "app.js" defer></script>
-        <title>Pokedex</title>
-    </head>
-
-    <body>
-        <div id = "content box"></div>
-        <!-- Left side, display pokemon info -->
-        <div id ="pokemon-info">
-            <img id ="pokemon-img" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png">
-            <div id ="pokemon-types"> 
-<span class="type-box grass">Grass</span><span class="type-box poison">Poison</span>
-            </div>
+    <title>Pokedex</title>
+</head>
+<body>
+    <script src="./app.js" defer></script>
+    <header>
+<nav>
+<div>
+    <h1>Generation 1 Pokedex</h1>
+    <img src="https://i.pinimg.com/564x/68/04/f9/6804f94f08de92dd38c664a70a6decfa.jpg"
+    alt="Gen Pokedex 1"/>
+    <div id = "content box"></div>
+</div>
+</nav>
+    </header>
+    <!-- Left side, display pokemon info -->
+    <div id ="pokemon-info">
+        <img id ="pokemon-img" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png">
+        <div id ="pokemon-types"> 
+            <span class="type-box grass">Grass</span><span class="type-box poison">Poison</span>
             <div id ="pokemon-description"></div>
         </div>
-        <!-- Right side, display pokemon list -->
-            <div id="pokemon-list">
-                <div id="1" class="pokemon-name">Bulbasaur</div>
-                <div id="1" class="pokemon-name">Bulbasaur</div>
-                <div id="1" class="pokemon-name">Bulbasaur</div>
-                <div id="1" class="pokemon-name">Bulbasaur</div>
-            </div>
-            </div>
-    </body>
+    </div>
+    <!-- Right side, display pokemon list -->
+    <div id="pokemon-list">
+        <div id="1" class="pokemon-name">Bulbasaur</div>
+        <div id="2" class="pokemon-name">Ivysaur</div>
+        <div id="3" class="pokemon-name">Venusaur</div>
+        <div id="4" class="pokemon-name">Charmander</div>
+        <div id="5" class="pokemon-name">Charmeleon</div>
+        <div id="6" class="pokemon-name">Charizard</div>
+        <div id="7" class="pokemon-name">Squirtle</div>
+        <div id="8" class="pokemon-name">Wartortle</div>
+        <div id="9" class="pokemon-name">Blastoise</div>
+        <div id="10" class="pokemon-name">Caterpie</div>
+    </div>
+</div>
+</body>
+<footer>© 2023 Pokémon. © 1995–2023 Nintendo/Creatures Inc./GAME FREAK inc. </footer>
+<script src = "app.js"></script>
         </html>
