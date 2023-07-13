@@ -78,7 +78,7 @@ Acknowledgments
 The Pokedex data used in this project is sourced from the PokeAPI.
 Special thanks to the creators and maintainers of the Pokemon franchise for inspiring this project.
 Contact
-If you have any questions, suggestions, or feedback, feel free to reach out to us at your-email@example.com.
+If you have any questions, suggestions, or feedback, feel free to reach out to jackiecheung@pursuit.org
 
 Enjoy exploring the Pokedex and testing your Pokemon knowledge with the Pokemon Quiz!
 
