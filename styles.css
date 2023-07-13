@@ -84,6 +84,9 @@ background-size:cover;
   text-align: center;
   grid-area: auto;
 }
+#pokemon-info :hover {
+    background-color: firebrick;
+}
 
 #pokemon-list {
   width: 250px;
@@ -93,6 +96,18 @@ background-size:cover;
   overflow-y: auto;
   grid-area: auto;
 }
+.scroll-container {
+    width: 300px; /* Set the desired width */
+    height: 200px; /* Set the desired height */
+    overflow: auto; /* Display scroll bars when necessary */
+  }
+  
+  .content {
+    /* Add some content to make the scroll bars appear */
+    width: 1000px;
+    height: 1000px;
+  }
+  
 .pokemon-name {
   border: 1px solid black;
   border-radius: 10px;
