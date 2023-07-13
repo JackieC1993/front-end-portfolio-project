@@ -45,9 +45,35 @@
 <div class="container">
     <form action="" id="loginForm">
       <h1>Pokemon Login</h1>
-      <input type="text" id="username" class="form-control" placeholder="Enter your Username...">
-      <input type="password" id="password" class="form-control" placeholder="Enter your Password...">
+      <input type="pokemon" id="pokemon" class="form-control" placeholder="Enter your Pokemon...">
+      <input type="pokemon-type" id="pokemon-type" class="form-control" placeholder="Enter your PokemonType...">
       <button type="submit">Submit</button>
+<article class="pokedexcard">
+        <h2>CATEGORY</h2>
+        <p class="qstn">Pokedex Quest</p>
+        <button type="submit" onclick="buttonClicker()">Show Answer</button>
+        <script type = "text/javascript">
+          fetch("https://pokeapi.co/api/v2/pokemon/1")
+    .then((response) => response.json())
+    .then((json) => {
+      const pokedex = json.results;
+      let i = 1;
+      for (let result of results) {
+        if (i < h2.length) {
+          h2[i].textContent = pokedex.category;
+          p[i].textContent = pokedex.question;
+          a[i].textContent = pokedex.correct_answer;
+          i++;
+        }
+      }}) 
+        function buttonClicker() {
+        const submitButton = document.querySelector("button")
+        submitButton.addEventListener("click", (e) => {
+            (e).preventDefault
+            .append[articleCard]
+        })}
+      buttonClicker()
+      </script>
 
     </form>
   </div>

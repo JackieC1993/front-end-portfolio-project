@@ -1,88 +1,45 @@
- const form = document.querySelector("form")
- const ul = document.querySelector("ul")
- ul.classList.add("pokedex", "list")
- let loginForm = document.getElementById("loginForm");
+// const buttonClicker = document.querySelector("button");
+const h2 = document.querySelectorAll("h2");
+const p = document.querySelectorAll(".qstn");
+const a = document.querySelectorAll("article.card p.hidden")
+buttonClicker.addEventListener("click", (event) => {
+  event.preventDefault();
+  fetch("https://pokeapi.co/api/v2/pokemon")
+    .then((response) => response.json())
+    .then((json) => {
+      const pokedex = json.results;
+      let i = 1;
+      for (let result of results) {
+        if (i < h2.length) {
+          h2[i].textContent = pokedex.category;
+          p[i].textContent = pokedex.question;
+          a[i].textContent = pokedex.correct_answer;
+          i++;
+        }
+      }})
+    })
+// let buttonClicker = document.querySelector("button")
+
+//  let loginForm = document.getElementById("loginForm");
  
- loginForm.addEventListener("submit", (e) => {
-   e.preventDefault();
+//  buttonClicker.addEventListener("submit", (e) => {
+//    e.preventDefault();
  
-   let username = document.getElementById("username");
-   let password = document.getElementById("password");
+//    let username = document.getElementById("username").textContent;
+//    let password = document.getElementById("password").textContent;
  
-   if (username.value == "" || password.value == "") {
-     alert("Ensure you input a value in both fields!");
-   } else {
-     // perform operation with form input
-     alert("This form has been successfully submitted!");
-     console.log(
-       `This form has a username of ${username.value} and password of ${password.value}`
-     );
+//    if (username == "" || password == "") {
+//      alert("Ensure you input a value in both fields!");
+//    } else {
+//      // perform operation with form input
+//      alert("This form has been successfully submitted!");
+//      console.log(
+//        `This form has a username of ${username} and password of ${password}`
+//      );
  
-     username.value = "";
-     password.value = "";
-   }
- });
+//      username = "";
+//      password = "";
 
-const pokemonCount = 10;
-let pokeddex = {}; // {"name" : "bulbsaur", "img" : url, "type" :["grass", "poison"], "desc" : "...."} )
+//    }
+//  });
 
-window.onload = async function () {
-    //getPokemon(1);
- for (let i = 1; i <= pokemonCount; i++){
-    await getPokemon(i);
-    //<div id="1" class="pokemon-name">Bulbasaur</div>
-    let pokemon = document.createElement("div")
-    pokemon.id = i;
-    pokemon.innerText = i.toString() + ". " + pokedex[i]["name"].toUpperCase();
-    pokemon.classList.add("pokemon-name");
-    pokemon.addEventListener("click", updatePokemon);
-    document.getElementById("pokemon-list").append(pokemon);
- }
- document.getElementById("pokemon-description").innerText= pokedex[1]["desc"];   
- console.log(pokedex);
-    
-}
-
-async function getPokemon (num) {
-    let url= "https://pokeapi.co/api/v2/pokemon/" + num.toString()
-
-    let res =  await fetch(url);
-    let pokemon = await res.json();
-    //console.log(pokemon);
-
-    let pokemonName = pokemon["name"]
-    let pokemonType = pokemon["types"]
-    let pokemonImg = pokemon["sprites"]["front_default"];
-
-    res = await fetch(pokemon["species"]["url"]);
-    let pokemonDesc = await res.json();
-
-    //console.log(pokemonDesc);
-    pokemonDesc = pokemonDesc["flavor_text_entries"][9]["flavor_text"]
-
-    pokedex[num] = {"name" : pokemonName, "img" : pokemonImg, "types" : pokemonType, "desc" : pokemonDesc}
-
-
-}
-
-function updatePokemon(){
-    document.getElementById("pokemon-img").src = pokedex[this.id]["img"];
- //clear previous type
- let typesDiv = document.getElementById("pokemn-types");
- while (!typesDiv.firstChild)
- typesDiv.firstChild.remove();
-}
-
-//update types
-let types = pokedex[this.id]["types"];
-for (let i = 0; i < types.length; i++) {
-    let type = document.createElement("span")
-    type.innerHTML = types[i]["type"]["name"].toUpperCase();
-    type.classList.add("type-box");
-    type.classList.add(types[i]["type"]["name"]);//adds background color and font color
-    typesDiv.append(type)
-    }
-
-    //update description
-    document.getElementById("pokemon-description").innerText = pokedex[this.id]["desc"];
-}
