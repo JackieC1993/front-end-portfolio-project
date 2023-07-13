@@ -8,6 +8,8 @@ Pokedex Entries: The application provides comprehensive information about each P
 Interactive Interface: The Pokedex offers an intuitive and user-friendly interface for easy navigation and exploration of Pokemon information.
 Favorite Pokemon: Users can mark specific Pokemon as favorites for quick access and future reference.
 
+Here is the link to the project"file:///Users/jackiecheung/Module_2/front-end-portfolio-project/index.html"
+
 <img src="https://d31xsmoz1lk3y3.cloudfront.net/games/imgur/0tDgqoW.jpg">
 
 

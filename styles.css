@@ -125,6 +125,10 @@ background-size:cover;
     background-color: white;
 }
 
+#pokemon-img :hover{
+    background-image:url("/Users/jackiecheung/Desktop/ivysaur.jpeg")
+}
+
 #pokemon-types{
     margin-top: 10px;
 }
